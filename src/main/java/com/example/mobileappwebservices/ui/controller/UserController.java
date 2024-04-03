@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("users")
 public class UserController {
 
-    @GetMapping
-    public String getUser() {
-        return "get user was called";
+    @GetMapping(path = "/{userId}")
+    public String getUser(@PathVariable String userId) {
+        return "get user was called " + userId;
     }
 
     @PostMapping
