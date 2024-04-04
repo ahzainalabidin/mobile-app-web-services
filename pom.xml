@@ -14,7 +14,7 @@
 	<name>mobile-app-web-services</name>
 	<description>For the sake of learning RESTful web services in Spring.</description>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
