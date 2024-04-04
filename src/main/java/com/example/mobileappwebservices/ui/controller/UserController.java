@@ -9,9 +9,10 @@ public class UserController {
     @GetMapping
     public String getUsers(
             @RequestParam(value = "page", defaultValue = "1") int page,
-            @RequestParam(value = "limit", defaultValue = "20") int limit
+            @RequestParam(value = "limit", defaultValue = "20") int limit,
+            @RequestParam(value = "sort", required = false) String sort
     ) {
-        return "get user was called with page " + page + " and limit " + limit;
+        return "get user was called with page " + page + " and limit " + limit + " and sort " + sort;
     }
 
     @GetMapping(path = "/{userId}")
