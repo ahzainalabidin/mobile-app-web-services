@@ -1,6 +1,7 @@
 package com.example.mobileappwebservices.ui.controller;
 
 import com.example.mobileappwebservices.ui.model.response.UserRest;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,7 +17,11 @@ public class UserController {
         return "get user was called with page " + page + " and limit " + limit + " and sort " + sort;
     }
 
-    @GetMapping(path = "/{userId}")
+    @GetMapping(path = "/{userId}",
+            produces = {
+                    MediaType.APPLICATION_XML_VALUE,
+                    MediaType.APPLICATION_JSON_VALUE
+            })
     public UserRest getUser(@PathVariable String userId) {
 
         UserRest returnValue = new UserRest();
