@@ -1,10 +1,19 @@
 package com.example.mobileappwebservices.ui.model.request;
 
+import jakarta.validation.constraints.NotNull;
+
 public class UserDetailsRequestModel {
 
+    @NotNull(message = "First name cannot be null")
     private String firstName;
+
+    @NotNull(message = "Last name cannot be null")
     private String lastName;
+
+    @NotNull(message = "Email cannot be null")
     private String email;
+
+    @NotNull(message = "Password cannot be null")
     private String password;
 
     public String getFirstName() {

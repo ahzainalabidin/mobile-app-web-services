@@ -2,6 +2,7 @@ package com.example.mobileappwebservices.ui.controller;
 
 import com.example.mobileappwebservices.ui.model.request.UserDetailsRequestModel;
 import com.example.mobileappwebservices.ui.model.response.UserRest;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -46,7 +47,7 @@ public class UserController {
                     MediaType.APPLICATION_JSON_VALUE,
             }
     )
-    public ResponseEntity<UserRest> createUser(@RequestBody UserDetailsRequestModel userDetails) {
+    public ResponseEntity<UserRest> createUser(@Valid @RequestBody UserDetailsRequestModel userDetails) {
 
         UserRest returnValue = new UserRest();
         returnValue.setEmail(userDetails.getEmail());
