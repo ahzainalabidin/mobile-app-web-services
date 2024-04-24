@@ -1,6 +1,7 @@
 package com.example.mobileappwebservices.ui.model.request;
 
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 public class UserDetailsRequestModel {
 
@@ -14,6 +15,7 @@ public class UserDetailsRequestModel {
     private String email;
 
     @NotNull(message = "Password cannot be null")
+    @Size(min = 8, max = 16, message = "Password characters must be equal or greater than 8 and less than 16")
     private String password;
 
     public String getFirstName() {
