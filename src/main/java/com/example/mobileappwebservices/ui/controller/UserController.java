@@ -1,5 +1,6 @@
 package com.example.mobileappwebservices.ui.controller;
 
+import com.example.mobileappwebservices.exceptions.UserServiceException;
 import com.example.mobileappwebservices.ui.model.request.UpdateUserDetailsRequestModel;
 import com.example.mobileappwebservices.ui.model.request.UserDetailsRequestModel;
 import com.example.mobileappwebservices.ui.model.response.UserRest;
@@ -36,8 +37,9 @@ public class UserController {
     public ResponseEntity<UserRest> getUser(@PathVariable String userId) {
 
         // To intentionally cause exception error
-        String firstName = null;
-        int firstNameLength = firstName.length();
+        if (true) {
+            throw new UserServiceException("A user service exception is thrown");
+        }
 
         if (users.containsKey(userId)) {
             return new ResponseEntity<>(users.get(userId), HttpStatus.OK);
